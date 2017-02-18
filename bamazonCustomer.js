@@ -47,7 +47,7 @@ var startOrder = function() {
         name: "purchase_quant",
         message: "Quantity you want to purchase: ",
         validate: function(value) {
-                  if (isNaN(value) === false && value > 0) {
+                  if (value > 0) {
                     return true;
                   } else {
                       return false;
@@ -64,6 +64,7 @@ var startOrder = function() {
                 console.log("\nYour order could not be placed. We do not have enough in stock.\n");
                 startOrder();
             } else {
+            	console.log(quant, id);
                 connection.query("UPDATE products SET stock_quantity = (stock_quantity - " + quant + ") WHERE id = " + id, function (error, results) 
                 {
                     if (error) {
@@ -84,14 +85,43 @@ var startOrder = function() {
 
                 order.push(item);
 
+                shopMore();
+
             };
         });
     });
-};    
+}   
+
+function shopMore() {
+	inquirer.prompt([{
+		type: "confirm",
+	  	name: "shopMore",
+	  	message: "Do you want to shop more?".bold,
+	  	}]).then(function(data) {
+	  		if(!data.shopMore){
+	  			checkOut();
+	  		} else {
+	  			startOrder();
+	  		};
+	  	});
+};
+
+
+
+
+function checkOut(){
+	var total = 0;
+	console.log("Your Purchase:".bold);
+	for (var i = 0; i < order.length; i++){
+		console.log("Product: ".bold + order[i].item + " Quantity: ".bold + order[i].quantity + " Price: ".bold + order[i].price);
+		total += order[i].price * order[i].quantity;
+	};
+	console.log("Total: ".bold + total);
+	connection.end();
+}
+
 
 startOrder();
-
-connection.end();
 
 
 // function startOrder() {
