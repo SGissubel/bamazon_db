@@ -1,0 +1,41 @@
+INSERT INTO departments (department_name, over_head_costs
+) VALUES ('Chain Saws', 140000);
+
+INSERT INTO departments (department_name, over_head_costs
+) VALUES ('Illegal Wildlife', 1170000);
+
+INSERT INTO departments (department_name, over_head_costs
+) VALUES ('DIY Mr. Robot', 20000000);
+
+
+
+INSERT INTO products (product_name, department_id, price, stock_quantity) VALUES ('African Elephant', 2, 15000, 2);
+
+
+INSERT INTO products (product_name, department_id, price, stock_quantity) VALUES ('Bengal Tiger', 2, 19000, 3);
+
+INSERT INTO products (product_name, department_id, price, stock_quantity) VALUES ('Dragon', 2, 225000, 1);
+
+INSERT INTO products (product_name, department_id, price, stock_quantity) VALUES ('The Giant Slayer', 1, 2800, 10);
+
+
+INSERT INTO products (product_name, department_id, price, stock_quantity) VALUES ('Dexter\'s Sidekick', 1, 3500, 5);
+
+INSERT INTO products (product_name, department_id, price, stock_quantity) VALUES ('Big Fun Little Crazy', 1, 1600, 8);
+
+INSERT INTO products (product_name, department_id, price, stock_quantity) VALUES ('Facedancer21', 3, 120, 5);
+
+INSERT INTO products (product_name, department_id, price, stock_quantity) VALUES ('ZebraMC40SILVRWLANJB', 3, 1500, 6);
+
+INSERT INTO products (product_name, department_id, price, stock_quantity) VALUES ('The Hacker\'s Handbk', 3, 120, 4);
+
+INSERT INTO products (product_name, department_id, price, stock_quantity) VALUES ('Metasploit', 3, 1200, 14);
+
+
+
+
+
+**********************************************************************************
+
+
+

@@ -2,7 +2,7 @@
 --
 -- Host: 127.0.0.1    Database: bamazon_db
 -- ------------------------------------------------------
--- Server version	5.7.15
+-- Server version	5.6.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -36,7 +36,7 @@ CREATE TABLE `departments` (
 
 LOCK TABLES `departments` WRITE;
 /*!40000 ALTER TABLE `departments` DISABLE KEYS */;
-INSERT INTO `departments` VALUES (1,'Chain Saws',140000),(2,'Illegal Wildlife',1170000),(3,'DIY Mr. Robot',20000000);
+INSERT INTO `departments` VALUES (1,'Chainsaws',140000),(2,'Illegal Wildlife',1170000),(3,'DIY Mr. Robot',20000000);
 /*!40000 ALTER TABLE `departments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +65,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'African Elephant',2,15000.00,2),(2,'Bengal Tiger',2,19000.00,1),(3,'Dragon',2,225000.00,1),(4,'The Giant Slayer',1,2800.00,10),(5,'Dexter\'s Sidekick',1,3500.00,5),(6,'Big Fun Little Crazy',1,1600.00,8),(7,'Facedancer21',3,120.00,5),(8,'ZebraMC40SILVRWLANJB',3,1500.00,6),(9,'The Hacker\'s Handbk',3,120.00,4),(10,'Metasploit',3,1200.00,14);
+INSERT INTO `products` VALUES (1,'African Elephant',2,15000.00,2),(2,'Bengal Tiger',2,19000.00,3),(3,'Dragon',2,225000.00,2),(4,'The Giant Slayer',1,2800.00,10),(5,'Dexter\'s Sidekick',1,3500.00,5),(6,'Big Fun Little Crazy',1,1600.00,8),(7,'Facedancer21',3,120.00,5),(8,'Zebra MC40 SILVR WLA',3,1500.00,6),(9,'The Hacker\'s Handboo',3,120.00,4),(10,'Metasploit',3,1200.00,14);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,7 +84,7 @@ CREATE TABLE `sales` (
   PRIMARY KEY (`id`),
   KEY `product_id` (`product_id`),
   CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +93,6 @@ CREATE TABLE `sales` (
 
 LOCK TABLES `sales` WRITE;
 /*!40000 ALTER TABLE `sales` DISABLE KEYS */;
-INSERT INTO `sales` VALUES (1,2,2,'2017-02-17 21:54:20');
 /*!40000 ALTER TABLE `sales` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -106,4 +105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-18  9:38:45
+-- Dump completed on 2017-02-20 13:51:25

@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
 	host	: 'localhost',
 	user	: 'root',
 	password: '',
-	database: 'bamazon_db',
+	database: 'bamazon_db'
 });
 
 connection.connect();
@@ -123,71 +123,6 @@ function checkOut(){
 
 startOrder();
 
-
-// function startOrder() {
-
-// connection.query('SELECT id, product_name, price, stock_quantity FROM products', function (error, results, fields)
-
-// {
-// 	for (var i = 0; i < results.length; i++) {
-// 	console.log("ID: " + results[i].id, "PRODUCT: " + results[i].product_name+ "PRICE: " + results[i].price);
-// 	}
-
-// inquirer.prompt([
-// 	{type: "input",
-// 		name: "product",
-// 		message: "What is the ID of the item you would like to purchase today?",
-// 		validate: function(value){
-// 			if(isNaN(value) === false && value > 0 && value < results.length + 1){
-// 				return true;
-// 			}
-// 			return false;
-// 		}
-// 	}, {type: "input",
-// 		name: "quantity",
-// 		message: "How many would you like to purchase?",
-// 		validate: function(value){
-// 			if(isNaN(value) === false && value > 0){
-// 				return true;
-// 			}
-// 			return false;
-// 		}
-// 	}
-// 		]).then (function(data){
-// 			var item = {};
-// 			var id = data.product;
-// 			var quant = data.quantity;
-// 			var item_name = results[id - 1].product_name;
-// 			var item_price = results[id - 1].price;
-
-// 			if (results[id - 1].stock_quantity - quant < 0){
-// 				console.log("Sorry!! All out! Order Something Else or Come Back Soon for Updates!")
-// 			} else {
-// 				connection.query("UPDATE products SET stock_quantity = (stock_quantity - " + quant + ") WHERE id = " + id, 
-// 					function (error, results) {
-//                     if (error) {
-//                         return console.log("There was an error updating the products table.");
-//                     }
-//                 });
-//                 connection.query("INSERT INTO sales (product_id, quantity_purchased) VALUES (" + id + ", " + quant + ")", 
-// 					function (error, results) {
-//                     if (error) {
-//                         return console.log("There was an error updating the products table.");
-//                     }
-//                 });
-//                 item["item"] = item_name;
-//                 item["price"] = item_price;
-//                 item["quantity"] = quant;
-//                 order.push(item);
-
-// 			}
-// 		});
-// 	});
-//                 connection.end();
-
-// }
-
-// startOrder();
 
 
 
